@@ -11,6 +11,7 @@ export type VolumeFlowRateMetricUnits =
   | 'dm3/min'
   | 'dm3/h'
   | 'dm3/d'
+  | 'dm3/w'
   | 'dm3/a'
   | 'ml/s'
   | 'cl/s'
@@ -19,14 +20,19 @@ export type VolumeFlowRateMetricUnits =
   | 'l/min'
   | 'l/h'
   | 'l/d'
+  | 'l/w'
   | 'l/a'
   | 'kl/s'
   | 'kl/min'
   | 'kl/h'
+  | 'kl/d'
+  | 'kl/w'
+  | 'kl/a'
   | 'm3/s'
   | 'm3/min'
   | 'm3/h'
   | 'm3/d'
+  | 'm3/w'
   | 'm3/a'
   | 'km3/s';
 
@@ -47,9 +53,15 @@ export type VolumeFlowRateImperialUnits =
   | 'gal/s'
   | 'gal/min'
   | 'gal/h'
+  | 'gal/d'
+  | 'gal/w'
+  | 'gal/a'
   | 'ft3/s'
   | 'ft3/min'
   | 'ft3/h'
+  | 'ft3/d'
+  | 'ft3/w'
+  | 'ft3/a'
   | 'yd3/s'
   | 'yd3/min'
   | 'yd3/h';
@@ -96,6 +108,13 @@ const metric: Record<VolumeFlowRateMetricUnits, Unit> = {
       plural: 'Cubic Decimeters per day',
     },
     to_anchor: 1 / 86400,
+  },
+  'dm3/w': {
+    name: {
+      singular: 'Cubic Decimeter per week',
+      plural: 'Cubic Decimeters per week',
+    },
+    to_anchor: 1 / 604800,
   },
   'dm3/a': {
     name: {
@@ -153,6 +172,13 @@ const metric: Record<VolumeFlowRateMetricUnits, Unit> = {
     },
     to_anchor: 1 / 86400,
   },
+  'l/w': {
+    name: {
+      singular: 'Litre per week',
+      plural: 'Litres per week',
+    },
+    to_anchor: 1 / 604800,
+  },
   'l/a': {
     name: {
       singular: 'Litre per year',
@@ -181,6 +207,27 @@ const metric: Record<VolumeFlowRateMetricUnits, Unit> = {
     },
     to_anchor: 5 / 18,
   },
+  'kl/d': {
+    name: {
+      singular: 'Kilolitre per day',
+      plural: 'Kilolitres per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'kl/w': {
+    name: {
+      singular: 'Kilolitre per week',
+      plural: 'Kilolitres per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'kl/a': {
+    name: {
+      singular: 'Kilolitre per year',
+      plural: 'Kilolitres per year',
+    },
+    to_anchor: 1 / 31557600,
+  },
   'm3/s': {
     name: {
       singular: 'Cubic meter per second',
@@ -208,6 +255,13 @@ const metric: Record<VolumeFlowRateMetricUnits, Unit> = {
       plural: 'Cubic meters per day',
     },
     to_anchor: 5 / 432,
+  },
+  'm3/w': {
+    name: {
+      singular: 'Cubic meter per week',
+      plural: 'Cubic meters per week',
+    },
+    to_anchor: 1 / 604800,
   },
   'm3/a': {
     name: {
@@ -338,6 +392,27 @@ const imperial: Record<VolumeFlowRateImperialUnits, Unit> = {
     },
     to_anchor: 8 / 225,
   },
+  'gal/d': {
+    name: {
+      singular: 'Gallon per day',
+      plural: 'Gallons per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'gal/w': {
+    name: {
+      singular: 'Gallon per week',
+      plural: 'Gallons per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'gal/a': {
+    name: {
+      singular: 'Gallon per year',
+      plural: 'Gallons per year',
+    },
+    to_anchor: 1 / 31557600,
+  },
   'ft3/s': {
     name: {
       singular: 'Cubic foot per second',
@@ -358,6 +433,27 @@ const imperial: Record<VolumeFlowRateImperialUnits, Unit> = {
       plural: 'Cubic feet per hour',
     },
     to_anchor: 957.506 / 3600,
+  },
+  'ft3/d': {
+    name: {
+      singular: 'Cubic foot per day',
+      plural: 'Cubic feet per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'ft3/w': {
+    name: {
+      singular: 'Cubic foot per week',
+      plural: 'Cubic feet per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'ft3/a': {
+    name: {
+      singular: 'Cubic foot per year',
+      plural: 'Cubic feet per year',
+    },
+    to_anchor: 1 / 31557600,
   },
   'yd3/s': {
     name: {
