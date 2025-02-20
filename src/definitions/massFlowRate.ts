@@ -7,11 +7,11 @@ export type MassFlowRateUnits =
 export type MassFlowRateSystems = 'metric' | 'imperial';
 
 export type MassFlowRateMetricUnits =
-  | 'kg/s' | 'kg/min' | 'kg/h' | 'kg/d' | 'kg/w' | 'kg/year'
-  | 'mt/s' | 'mt/min' | 'mt/h' | 'mt/d' | 'mt/w' | 'mt/year';
+  | 'kg/s' | 'kg/min' | 'kg/h' | 'kg/d' | 'kg/w' | 'kg/a'
+  | 'mt/s' | 'mt/min' | 'mt/h' | 'mt/d' | 'mt/w' | 'mt/a';
 
 export type MassFlowRateImperialUnits =
-  | 'lb/s' | 'lb/min' | 'lb/h' | 'lb/d' | 'lb/w' | 'lb/year';
+  | 'lb/s' | 'lb/min' | 'lb/h' | 'lb/d' | 'lb/w' | 'lb/a';
 
 const metric: Record<MassFlowRateMetricUnits, Unit> = {
   'kg/s': {
@@ -49,7 +49,7 @@ const metric: Record<MassFlowRateMetricUnits, Unit> = {
     },
     to_anchor: 1 / 604800,
   },
-  'kg/year': {
+  'kg/a': {
     name: {
       singular: 'Kilogram per year',
       plural: 'Kilograms per year',
@@ -91,7 +91,7 @@ const metric: Record<MassFlowRateMetricUnits, Unit> = {
     },
     to_anchor: 1 / 604800,
   },
-  'mt/year': {
+  'mt/a': {
     name: {
       singular: 'Ton per year',
       plural: 'Tons per year',
@@ -136,7 +136,7 @@ const imperial: Record<MassFlowRateImperialUnits, Unit> = {
     },
     to_anchor: 1 / 604800,
   },
-  'lb/year': {
+  'lb/a': {
     name: {
       singular: 'Pound per year',
       plural: 'Pounds per year',
