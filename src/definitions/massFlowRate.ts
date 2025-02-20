@@ -6,8 +6,12 @@ export type MassFlowRateUnits =
 
 export type MassFlowRateSystems = 'metric' | 'imperial';
 
-export type MassFlowRateMetricUnits = 'kg/s' | 'kg/min' | 'kg/h' | 'mt/h';
-export type MassFlowRateImperialUnits = 'lb/s' | 'lb/h';
+export type MassFlowRateMetricUnits =
+  | 'kg/s' | 'kg/min' | 'kg/h' | 'kg/d' | 'kg/w' | 'kg/year'
+  | 'mt/s' | 'mt/min' | 'mt/h' | 'mt/d' | 'mt/w' | 'mt/year';
+
+export type MassFlowRateImperialUnits =
+  | 'lb/s' | 'lb/min' | 'lb/h' | 'lb/d' | 'lb/w' | 'lb/year';
 
 const metric: Record<MassFlowRateMetricUnits, Unit> = {
   'kg/s': {
@@ -31,12 +35,68 @@ const metric: Record<MassFlowRateMetricUnits, Unit> = {
     },
     to_anchor: 1 / 3600,
   },
+  'kg/d': {
+    name: {
+      singular: 'Kilogram per day',
+      plural: 'Kilograms per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'kg/w': {
+    name: {
+      singular: 'Kilogram per week',
+      plural: 'Kilograms per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'kg/year': {
+    name: {
+      singular: 'Kilogram per year',
+      plural: 'Kilograms per year',
+    },
+    to_anchor: 1 / 31536000,
+  },
+  'mt/s': {
+    name: {
+      singular: 'Metric ton per second',
+      plural: 'Metric tons per second',
+    },
+    to_anchor: 1,
+  },
   'mt/h': {
     name: {
       singular: 'Ton per hour',
       plural: 'Tons per hour',
     },
     to_anchor: 1 / 3.6,
+  },
+  'mt/min': {
+    name: {
+      singular: 'Ton per minute',
+      plural: 'Tons per minute',
+    },
+    to_anchor: 1 / 216,
+  },
+  'mt/d': {
+    name: {
+      singular: 'Ton per day',
+      plural: 'Tons per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'mt/w': {
+    name: {
+      singular: 'Ton per week',
+      plural: 'Tons per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'mt/year': {
+    name: {
+      singular: 'Ton per year',
+      plural: 'Tons per year',
+    },
+    to_anchor: 1 / 31536000,
   },
 };
 
@@ -54,6 +114,34 @@ const imperial: Record<MassFlowRateImperialUnits, Unit> = {
       plural: 'Pounds per hour',
     },
     to_anchor: 1 / 3600,
+  },
+  'lb/min': {
+    name: {
+      singular: 'Pound per minute',
+      plural: 'Pounds per minute',
+    },
+    to_anchor: 1 / 60,
+  },
+  'lb/d': {
+    name: {
+      singular: 'Pound per day',
+      plural: 'Pounds per day',
+    },
+    to_anchor: 1 / 86400,
+  },
+  'lb/w': {
+    name: {
+      singular: 'Pound per week',
+      plural: 'Pounds per week',
+    },
+    to_anchor: 1 / 604800,
+  },
+  'lb/year': {
+    name: {
+      singular: 'Pound per year',
+      plural: 'Pounds per year',
+    },
+    to_anchor: 1 / 31536000,
   },
 };
 
