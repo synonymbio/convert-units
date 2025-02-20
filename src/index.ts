@@ -16,3 +16,7 @@ export type {
   UnitCache,
   UnitDescription,
 } from './convert.js';
+export {
+  sanitizeUnit,
+  buildUnitAliasCache,
+} from './sanitize.js';
