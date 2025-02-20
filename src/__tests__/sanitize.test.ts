@@ -130,6 +130,7 @@ test('sanitizeUnit', () => {
   expect(sanitizeUnit('m3 / d', aliasCache)).toBe('m3/d');
   expect(sanitizeUnit('m3 / w', aliasCache)).toBe('m3/w');
   expect(sanitizeUnit('m3 / a', aliasCache)).toBe('m3/a');
+
   // Make sure Python powers work:
   expect(sanitizeUnit('m ** 3 / s', aliasCache)).toBe('m3/s');
   expect(sanitizeUnit('m ** 3 / min', aliasCache)).toBe('m3/min');
