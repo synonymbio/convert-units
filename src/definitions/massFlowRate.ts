@@ -61,42 +61,42 @@ const metric: Record<MassFlowRateMetricUnits, Unit> = {
       singular: 'Metric ton per second',
       plural: 'Metric tons per second',
     },
-    to_anchor: 1,
+    to_anchor: 1000,
   },
   'mt/h': {
     name: {
       singular: 'Ton per hour',
       plural: 'Tons per hour',
     },
-    to_anchor: 1 / 3.6,
+    to_anchor: 1000 / 3600,
   },
   'mt/min': {
     name: {
       singular: 'Ton per minute',
       plural: 'Tons per minute',
     },
-    to_anchor: 1 / 216,
+    to_anchor: 1000 / 60,
   },
   'mt/d': {
     name: {
       singular: 'Ton per day',
       plural: 'Tons per day',
     },
-    to_anchor: 1 / 86400,
+    to_anchor: 1000 / 86400,
   },
   'mt/w': {
     name: {
       singular: 'Ton per week',
       plural: 'Tons per week',
     },
-    to_anchor: 1 / 604800,
+    to_anchor: 1000 / 604800,
   },
   'mt/a': {
     name: {
       singular: 'Ton per year',
       plural: 'Tons per year',
     },
-    to_anchor: 1 / 31536000,
+    to_anchor: 1000 / 31536000,
   },
 };
 
